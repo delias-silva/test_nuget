@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <AssemblyName>Test</AssemblyName>
+    <AssemblyTitle>Test</AssemblyTitle>
+    <Authors>Danilo</Authors>
+    <Description>Test package</Description>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IncludeSymbols>true</IncludeSymbols>
+    <LangVersion>7.3</LangVersion>
+    <PackageId>TestAutoDeploy</PackageId>
+    <SignAssembly>True</SignAssembly>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.0.0</Version>
+    <VersionPrefix>1.0.0</VersionPrefix>
+  </PropertyGroup>
+
+</Project>
