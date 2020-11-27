@@ -23,7 +23,7 @@ jobs:
     - name: Setup dotnet
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.x
+        dotnet-version: '3.1.x'
     
     # Publish
     - name: publish on version change
@@ -43,7 +43,7 @@ jobs:
         # VERSION_REGEX: ^\s*<Version>(.*)<\/Version>\s*$
 
         # Format of the git tag, [*] gets replaced with actual version
-        TAG_FORMAT: *
+        TAG_FORMAT: [*]
 
         # API key to authenticate with NuGet server
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
