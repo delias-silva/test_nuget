@@ -1,5 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
+  <Import Project="..\..\netfx.props" />
   <PropertyGroup>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <AssemblyName>Test</AssemblyName>
@@ -12,9 +12,21 @@
     <PackageId>TestAutoDeploy</PackageId>
     <SignAssembly>True</SignAssembly>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>1.0.2</Version>
-    <VersionPrefix>1.0.2</VersionPrefix>
+    <TargetFrameworks>net5.0;netstandard2.0;net461</TargetFrameworks>
+    <Version>1.0.4</Version>
+    <VersionPrefix>1.0.4</VersionPrefix>
   </PropertyGroup>
 
+  <ItemGroup Condition="'$(TargetFramework)' == 'net5.0'">
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
 </Project>
