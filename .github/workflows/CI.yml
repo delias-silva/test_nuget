@@ -17,8 +17,8 @@ jobs:
 
       - name: Setup mono
         run: |
-          apt update
-          apt install -qy --no-install-recommends mono-runtime
+          sudo apt-get update
+          sudo apt-get install -qy --no-install-recommends mono-runtime
 
       # - name: Setup environment
       #   run: |
